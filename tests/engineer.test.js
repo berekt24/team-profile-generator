@@ -1,7 +1,7 @@
 const Engineer = require('../lib/Engineer');
 const engineer = new Engineer('berekt', '981235','bashenafi35@gmail.com','berekt24');
 
-it('should be able to get constructor values for Manager object', () => {
+it('should be able to get constructor values for Engineer object', () => {
     expect(engineer.name).toBe('berekt');
     expect(engineer.id).toBe('981235');
     expect(engineer.email).toBe('bashenafi35@gmail.com');
