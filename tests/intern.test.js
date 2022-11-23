@@ -1,5 +1,5 @@
 const Intern = require('../lib/Intern');
-const intern = new Intern('berekt', '981235','bashenafi35@gmail.com','ohio state');
+const intern = new Intern('berekt', '981235', 'bashenafi35@gmail.com', 'ohio state');
 
 it('should be able to get constructor values for Manager object', () => {
     expect(intern.name).toBe('berekt');

@@ -1,5 +1,5 @@
 const Manager = require('../lib/Manager');
-const manager = new Manager('berekt', '981235','bashenafi35@gmail.com','98');
+const manager = new Manager('berekt', '981235', 'bashenafi35@gmail.com', '98');
 
 it('should be able to get constructor values for Manager object', () => {
     expect(manager.name).toBe('berekt');
