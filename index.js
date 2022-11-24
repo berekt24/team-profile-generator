@@ -1,9 +1,11 @@
 const fs = require('fs');
+const path = require('path');
 const inquirer = require('inquirer');
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
 const theTeam = [];
+const renderPage = require('./src/template')
 
 const managerQuestions = () => {
     return inquirer
@@ -32,7 +34,7 @@ const managerQuestions = () => {
 
 .then(answers => {
     console.log(answers);
-    const manager = new Manager(answers.name, answers.id, answers.email, answers.officNumber);
+    const manager = new Manager(answers.name, answers.Id, answers.email, answers.officNumber);
     theTeam.push(manager);
     teamOptions();
 })};
@@ -91,7 +93,7 @@ function addEngineer() {
 
 .then(answers => {
 console.log(answers);
-const engineer = new Engineer(answers.name, answers.id, answers.email, answers.github);
+const engineer = new Engineer(answers.name, answers.Id, answers.email, answers.github);
 theTeam.push(engineer);
 teamOptions();
 })  
@@ -123,7 +125,7 @@ function addIntern() {
 
 .then(answers => {
 console.log(answers);
-const intern = new Intern(answers.name, answers.id, answers.email, answers.school);
+const intern = new Intern(answers.name, answers.Id, answers.email, answers.school);
 theTeam.push(intern);
 teamOptions();
 })  
@@ -131,5 +133,6 @@ teamOptions();
 function createTeam() {
     console.log(theTeam);
     // to be completed
+    fs.writeFileSync(path.join(__dirname, 'dist/team.html'),renderPage(theTeam), 'utf-8');
 }
 managerQuestions();
