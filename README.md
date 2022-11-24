@@ -19,7 +19,7 @@ This project builds a Node.js command-line application that takes in information
     Open terminal, type 'node index.js', answer the questions and the HTML will generate.
 
   ## Video Walkthrough 
-     ![Team Profile Generator Demo]()
+     ![Team Profile Generator Demo](https://drive.google.com/file/d/1Qbw7fowdERhP3jIwKtSK2N0gUNBrbWaU/view)
 
   ## Contributing
     none
