@@ -1,3 +1,4 @@
+// variables and files required
 const fs = require('fs');
 const path = require('path');
 const inquirer = require('inquirer');
@@ -7,6 +8,7 @@ const Intern = require('./lib/Intern');
 const theTeam = [];
 const renderPage = require('./src/template')
 
+// prompt for manager questions
 const managerQuestions = () => {
     return inquirer
         .prompt([
@@ -38,7 +40,7 @@ const managerQuestions = () => {
     theTeam.push(manager);
     teamOptions();
 })};
-
+// prompt for list of team member options
 const teamOptions = () => {
     return inquirer
     .prompt([
@@ -66,6 +68,7 @@ const teamOptions = () => {
         } 
     }) 
 }
+// prompt for engineer questions
 function addEngineer() {
     inquirer
     .prompt([
@@ -98,6 +101,7 @@ theTeam.push(engineer);
 teamOptions();
 })  
 }
+// prompt for Intern questions
 function addIntern() {
     inquirer
     .prompt([
@@ -130,9 +134,10 @@ theTeam.push(intern);
 teamOptions();
 })  
 }
+// function to fill theTeam with answers from the prompt and create HTML
 function createTeam() {
     console.log(theTeam);
-    // to be completed
+    
     fs.writeFileSync(path.join(__dirname, 'dist/team.html'),renderPage(theTeam), 'utf-8');
 }
 managerQuestions();

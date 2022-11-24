@@ -1,4 +1,4 @@
-
+// function for creating an HTML with the answers
 function makeTeamHTML(theTeam) {
     return `
     <!DOCTYPE html>
@@ -52,6 +52,7 @@ function generateTeam(theTeam) {
 
     return teamHTML.join("");
 }
+// card template for manager
 function generateManager(manager) {
     return `<div class="card" style="width: 18rem;">
     <div id="card-header" class="card-header">
@@ -60,11 +61,12 @@ function generateManager(manager) {
     </div>
     <ul class="list-group list-group-flush">
       <li class="list-group-item">Id:  ${manager.getId()}</li>
-      <li class="list-group-item">Email:   <a href="${manager.getEmail()}">${manager.getEmail()}</a></li>
+      <li class="list-group-item">Email:   <a href="mailto: ${manager.getEmail()}">${manager.getEmail()}</a></li>
       <li class="list-group-item">Office Number:  ${manager.getOfficeNumber()}</li>
     </ul>
   </div>`
 }
+// card template for engineer
 function generateEngineer(engineer) {
     return `<div class="card" style="width: 18rem;">
     <div id="card-header" class="card-header">
@@ -73,11 +75,12 @@ function generateEngineer(engineer) {
     </div>
     <ul class="list-group list-group-flush">
       <li class="list-group-item">Id:  ${engineer.getId()}</li>
-      <li class="list-group-item">Email:   <a href="${engineer.getEmail()}">${engineer.getEmail()}</a></li>
+      <li class="list-group-item">Email:   <a href="mailto: ${engineer.getEmail()}">${engineer.getEmail()}</a></li>
       <li class="list-group-item">Github:  <a target="_blank" href="https://github.com/${engineer.getGithub()}">${engineer.getGithub()}</a></li>
     </ul>
   </div>`
 }
+// card template for intern
 function generateIntern(intern) {
     return `<div class="card" style="width: 18rem;">
     <div id="card-header" class="card-header">
@@ -86,7 +89,7 @@ function generateIntern(intern) {
     </div>
     <ul class="list-group list-group-flush">
       <li class="list-group-item">Id:  ${intern.getId()}</li>
-      <li class="list-group-item">Email:   <a href="${intern.getEmail()}">${intern.getEmail()}</a></li>
+      <li class="list-group-item">Email:   <a href=" ${intern.getEmail()}">${intern.getEmail()}</a></li>
       <li class="list-group-item">School:  ${intern.getSchool()}</li>
     </ul>
   </div>`
