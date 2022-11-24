@@ -34,7 +34,7 @@ const managerQuestions = () => {
 
 .then(answers => {
     console.log(answers);
-    const manager = new Manager(answers.name, answers.Id, answers.email, answers.officNumber);
+    const manager = new Manager(answers.name, answers.Id, answers.email, answers.officeNumber);
     theTeam.push(manager);
     teamOptions();
 })};
